@@ -51,8 +51,8 @@ class SeqReader():
         self.vocab_indices = dict((c, i) for i, c in enumerate(self.vocabs))
         self.data_queue = Queue(queue_size)
         self.worker_size = worker_size
-        with open(self.input_file) as f:
-            for i, l in enumerate(f):
+        with open(self.input_file, encoding='utf-8') as f:  #读取文件
+            for i, l in enumerate(f):  #枚举函数
                 pass
             f.close()
             self.single_lines = i+1
